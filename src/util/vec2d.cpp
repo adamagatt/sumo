@@ -67,5 +67,5 @@ std::ostream& operator<<(std::ostream& output, const Vec2d& v) {
 
 bool operator==(const Vec2d& lhs, const Vec2d& rhs)
 {
-    lhs.x == rhs.x && lhs.y == rhs.y;
+    return lhs.x == rhs.x && lhs.y == rhs.y;
 }
