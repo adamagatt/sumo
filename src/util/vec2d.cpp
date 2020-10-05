@@ -64,3 +64,8 @@ std::ostream& operator<<(std::ostream& output, const Vec2d& v) {
     output << "[" << v.x << ", " << v.y << "]";
     return output;            
 }
+
+bool operator==(const Vec2d& lhs, const Vec2d& rhs)
+{
+    lhs.x == rhs.x && lhs.y == rhs.y;
+}

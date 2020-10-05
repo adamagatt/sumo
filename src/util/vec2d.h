@@ -8,6 +8,7 @@ class Vec2d {
     float y;
     
     friend std::ostream& operator<<(std::ostream &output, const Vec2d& V);
+    friend bool operator==(const Vec2d& lhs, const Vec2d& rhs);
 
     public:
     Vec2d(float x, float y);
