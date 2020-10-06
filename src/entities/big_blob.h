@@ -2,7 +2,6 @@
 #define BIG_BLOB_H
 
 #include "entity.h"
-#include "../util/vec2d.h"
 
 class BigBlob : public Entity {
     const static string name;

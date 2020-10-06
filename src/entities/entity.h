@@ -1,9 +1,9 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "../util/vec2d.h"
-#include <string>
 #include <SDL2/SDL_image.h>
+
+#include "../util/vec2d.h"
 
 using namespace std;
 

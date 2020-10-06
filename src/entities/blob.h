@@ -2,7 +2,6 @@
 #define BLOB_H
 
 #include "entity.h"
-#include "../util/vec2d.h"
 
 class Blob : public Entity {
     const static string name;

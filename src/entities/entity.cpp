@@ -1,8 +1,4 @@
-#include <algorithm>
-#include <iostream>
-
 #include "entity.h"
-#include "../util/vec2d.h"
 
 const float Entity::MAX_ANGLE_SPEED = 15.0;
 const float Entity::MAX_ANGLE = 0.9;

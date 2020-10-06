@@ -2,7 +2,6 @@
 #define PLAYER_H
 
 #include "entity.h"
-#include "../util/vec2d.h"
 
 class Player : public Entity {
     const static string name;

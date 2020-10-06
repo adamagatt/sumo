@@ -1,19 +1,10 @@
-#include <SDL2/SDL.h> 
-#include <SDL2/SDL_image.h> 
-#include <SDL2/SDL_timer.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 
-#include <algorithm> 
-#include <iostream>
-#include <vector>
-#include <random>
+#include <algorithm> // for sort()
 
 #include "sumo_game.h"
-#include "entities/entity.h"
 #include "entities/blob.h"
 #include "entities/big_blob.h"
-#include "entities/player.h"
-#include "util/vec2d.h"
 
 int SumoGame::randFramesEnd = 0;
 
