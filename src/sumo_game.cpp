@@ -2,59 +2,22 @@
 #include <SDL2/SDL_image.h> 
 #include <SDL2/SDL_timer.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
+
 #include <algorithm> 
 #include <iostream>
 #include <vector>
 #include <random>
 
+#include "sumo_game.h"
 #include "entities/entity.h"
 #include "entities/blob.h"
 #include "entities/big_blob.h"
 #include "entities/player.h"
 #include "util/vec2d.h"
 
-using namespace std;
+int SumoGame::randFramesEnd = 0;
 
-class MainComponent
-{
- public:
-    void init();
-    ~MainComponent();
-
- private:
-    const static int SCREEN_WIDTH = 800;
-    const static int SCREEN_HEIGHT = 600;
-    const static int PAD_WIDTH = 320;
-    const static int PAD_HEIGHT = 200;
-    const float BACKGROUND_SCALE = 0.6;
-    constexpr static float TICK_TIME_MS = 33.33;
-    float PUSH_FACTOR = TICK_TIME_MS * 0.02;
-    constexpr static int RAND_FRAMES_BEGIN = (int)(1000 / TICK_TIME_MS);
-    static int randFramesEnd;
-
-    int timeToSpawn = 8000/TICK_TIME_MS;
-
-    vector<Entity*> entities;
-
-    SDL_Window *window;
-    SDL_Renderer* renderer;
-    SDL_Rect texr;
-    const Uint8* keystate;
-
-    Player* player;
-
-    void drawScene(SDL_Renderer* renderer);
-    bool playerInput(Player* player);
-    void entityTick(Player* player);
-    void checkEliminated(Entity* entity);
-    int randRange(int min, int max);
-    Vec2d randStartPos();
-    void initialise();
-};
-
-int MainComponent::randFramesEnd = 0;
-
-void MainComponent::initialise() {
+void SumoGame::initialise() {
     for (auto e: entities) {
         delete e;
     }
@@ -68,13 +31,13 @@ void MainComponent::initialise() {
     entities.push_back(new Blob{SCREEN_WIDTH*3.0f/4.0f, SCREEN_HEIGHT/2.0f});
 }
 
-MainComponent::~MainComponent()
+SumoGame::~SumoGame()
 {
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
 }
 
-void MainComponent::init() {
+void SumoGame::init() {
     //Initialize SDL
     SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -114,7 +77,7 @@ void MainComponent::init() {
 	}
 }
 
-bool MainComponent::playerInput(Player* player) {
+bool SumoGame::playerInput(Player* player) {
     SDL_PumpEvents();
     if (keystate[SDL_SCANCODE_ESCAPE]) {
         SDL_Quit();
@@ -146,7 +109,7 @@ bool MainComponent::playerInput(Player* player) {
     return false;
 }
 
-void MainComponent::entityTick(Player* player) {
+void SumoGame::entityTick(Player* player) {
     for(auto e1 = entities.begin(); e1 != entities.end() - 1; ++e1) {
         for(auto e2 = std::next(e1); e2 != entities.end(); ++e2) {
             if ((*e1)->touching(**e2)) {
@@ -161,7 +124,7 @@ void MainComponent::entityTick(Player* player) {
     }
 }
 
-void MainComponent::drawScene(SDL_Renderer* renderer) {
+void SumoGame::drawScene(SDL_Renderer* renderer) {
         SDL_SetRenderDrawColor(renderer, 240, 245 ,255, 255);
         SDL_RenderClear(renderer);
         filledEllipseRGBA(renderer, SCREEN_WIDTH/2, SCREEN_HEIGHT/2,
@@ -201,7 +164,7 @@ void MainComponent::drawScene(SDL_Renderer* renderer) {
         SDL_RenderPresent(renderer);
 }
 
-void MainComponent::checkEliminated(Entity* entity) {
+void SumoGame::checkEliminated(Entity* entity) {
     constexpr int PAD_WIDTH_SQUARE = PAD_WIDTH * PAD_WIDTH;
     constexpr int PAD_HEIGHT_SQUARE = PAD_HEIGHT * PAD_HEIGHT;
     constexpr long COMPARE_VALUE = (long)PAD_WIDTH_SQUARE * PAD_HEIGHT_SQUARE;
@@ -218,11 +181,11 @@ void MainComponent::checkEliminated(Entity* entity) {
     }
 }
 
-int MainComponent::randRange(int min, int max) {
+int SumoGame::randRange(int min, int max) {
     return (int)((float)rand() / RAND_MAX * (max-min))+min;
 }
 
-Vec2d MainComponent::randStartPos() {
+Vec2d SumoGame::randStartPos() {
     if (rand() < (RAND_MAX >> 1)) {
         return Vec2d(
             (rand() < (RAND_MAX >> 1)) ? 0 : SCREEN_WIDTH,
@@ -238,7 +201,7 @@ Vec2d MainComponent::randStartPos() {
 
 int main(int argc, const char * argv[]) {
 
-    MainComponent mainComponent;
+    SumoGame mainComponent;
     mainComponent.init();
 
     return 0;
