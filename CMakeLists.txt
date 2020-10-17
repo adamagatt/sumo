@@ -14,7 +14,7 @@ include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 
 # Create executable and set properties
 add_executable(sumo src/sumo_game.cpp)
-set_target_properties(sumo PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES CCXX_EXTENSIONS NO)
+set_target_properties(sumo PROPERTIES CXX_STANDARD_REQUIRED YES CCXX_EXTENSIONS NO)
 
 # Link to created libraries and to SDL
 target_link_libraries(sumo entities vec2d)
