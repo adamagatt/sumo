@@ -25,5 +25,8 @@ add_subdirectory(tests)
 enable_testing()
 add_test(NAME testVector2d COMMAND runTestVector2d)
 
+# Docs handled in seperate cmake
+add_subdirectory(docs)
+
 # Copy art assets into build directory
 file(COPY src/assets DESTINATION ${CMAKE_BINARY_DIR})
