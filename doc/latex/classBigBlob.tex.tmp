@@ -1,0 +1,53 @@
+\hypertarget{classBigBlob}{}\section{Big\+Blob Class Reference}
+\label{classBigBlob}\index{Big\+Blob@{Big\+Blob}}
+
+
+Inheritance diagram for Big\+Blob\+:
+% FIG 0
+
+
+Collaboration diagram for Big\+Blob\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBigBlob_a76c20ca61d947384d5b53b687fd9e4f8}\label{classBigBlob_a76c20ca61d947384d5b53b687fd9e4f8}} 
+{\bfseries Big\+Blob} (float x, float y)
+\item 
+\mbox{\Hypertarget{classBigBlob_a7cc7facfdc038aa636d55f1ab7980394}\label{classBigBlob_a7cc7facfdc038aa636d55f1ab7980394}} 
+{\bfseries Big\+Blob} (\hyperlink{classVec2d}{Vec2d} pos)
+\item 
+\mbox{\Hypertarget{classBigBlob_ad4e437276b3648322e42f0f19d612a4a}\label{classBigBlob_ad4e437276b3648322e42f0f19d612a4a}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries get\+Image} () const
+\item 
+\mbox{\Hypertarget{classBigBlob_a0eff4a0c3ded0b06ea8a2031da502e50}\label{classBigBlob_a0eff4a0c3ded0b06ea8a2031da502e50}} 
+string {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{classBigBlob_acba0e47ea1f972c69f32d2db57c0a823}\label{classBigBlob_acba0e47ea1f972c69f32d2db57c0a823}} 
+float {\bfseries get\+Scale} () const
+\item 
+\mbox{\Hypertarget{classBigBlob_abc52c9dcf23a5ab1308c7a2c2423bca3}\label{classBigBlob_abc52c9dcf23a5ab1308c7a2c2423bca3}} 
+float {\bfseries get\+Mass} () const
+\item 
+\mbox{\Hypertarget{classBigBlob_a97f6fdfd4197ace11d40194544f464d0}\label{classBigBlob_a97f6fdfd4197ace11d40194544f464d0}} 
+float {\bfseries get\+Friction} () const
+\item 
+\mbox{\Hypertarget{classBigBlob_ae805a8de0ebddf6b95a0202dbb12de0a}\label{classBigBlob_ae805a8de0ebddf6b95a0202dbb12de0a}} 
+float {\bfseries get\+Diameter} () const
+\item 
+\mbox{\Hypertarget{classBigBlob_a9e2cf8005992cb2017618a304b4b864a}\label{classBigBlob_a9e2cf8005992cb2017618a304b4b864a}} 
+float {\bfseries get\+Speed} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBigBlob_ab031027ddf18ddb4513442c434087676}\label{classBigBlob_ab031027ddf18ddb4513442c434087676}} 
+static void {\bfseries load\+Image} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/adam.\+gatt/coding/c++/sumo/src/entities/big\+\_\+blob.\+h\item 
+/home/adam.\+gatt/coding/c++/sumo/src/entities/big\+\_\+blob.\+cpp\end{DoxyCompactItemize}
