@@ -9,9 +9,6 @@
 int SumoGame::randFramesEnd = 0;
 
 void SumoGame::initialise() {
-    for (auto e: entities) {
-        delete e;
-    }
     entities.clear();
 
     timeToSpawn = 8000/TICK_TIME_MS;
